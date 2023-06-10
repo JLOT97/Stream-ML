@@ -1,0 +1,66 @@
+** FastAPI Movie Analysis Application Documentation **
+
+
+
+1. Overview of FastAPI
+
+FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints. 
+A key feature of FastAPI is its automatic and interactive API documentation. This application uses these features to provide analytical data about movies
+through several FastAPI endpoints.
+
+
+
+2. Routes and Endpoints
+
+The application consists of the following endpoints:
+
+
+    2.1 GetMovieCountByMonth
+
+        Endpoint: "/get_movie_count_by_month/{month}"
+
+        This endpoint accepts a path parameter, which is the name or number of a month. It returns the count of movies filmed in that particular month.
+
+
+    2.2 GetMovieCountByDay
+
+        Endpoint: "/get_movie_count_by_day/{day}"
+
+        This endpoint takes in a day of the month as a parameter and returns the count of movies filmed on that particular day of every month.
+
+    2.3 GetMovieRatingByTitle
+
+        Endpoint: "/get_movie_rating_by_title/{title}"
+
+        This endpoint takes in the title of a movie and returns details about the movie, including its release year and popularity.
+
+    2.4 GetMovieVotesByTitle
+
+        Endpoint: "/get_movie_votes_by_title/{title}"
+
+        This endpoint takes the title of a movie and returns voting information about the movie, including the total number of votes and average rating.
+
+    2.5 GetActorInformation
+
+        Endpoint: "/get_actor_information/{actor}"
+
+        This endpoint takes an actor's name as a parameter and provides information about the movies they have worked in, including the total and average returns.
+
+    2.6 GetDirectorInformation
+
+        Endpoint: "/get_director_information/{director}"
+
+        This endpoint takes the name of a director as a parameter and provides information about the movies they have directed, including details about each movie 
+        and the total return.
+
+
+
+3. Testing
+
+The application includes a set of tests to ensure its functionality. To run these tests, follow the instructions in the testing documentation.
+
+
+
+4. Deployment
+
+For details on how the application has been deployed and how to access it, refer to the deployment documentation.

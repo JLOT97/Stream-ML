@@ -1,0 +1,97 @@
+** Exploratory Data Analysis (EDA) Documentation **
+
+
+
+
+Exploratory Data Analysis (EDA) is a fundamental stage in any data science project. It provides an initial understanding of the data and reveals important patterns, 
+trends, and relationships. In this section, an EDA is performed using various tools and techniques to explore a movie dataset.
+
+
+
+Step 1: Import the necessary libraries
+
+    Used Libraries
+    pandas: Used for data manipulation and analysis.
+    missingno: Used for visualizing missing data.
+    matplotlib.pyplot: Used for data visualization.
+    wordcloud: Used for generating word clouds.
+    sweetviz: Used for automatic EDA report generation.
+    seaborn: Used for advanced data visualization.
+    Step 1: Import Libraries
+    The necessary libraries for data analysis are imported.
+
+
+Step 2: Load the Data File
+
+    The CSV file is loaded into a pandas DataFrame using the read_csv function.
+
+
+Step 3: Set Visualization Options
+
+    The visualization options are set to display all columns in the DataFrame using the set_option function.
+
+
+Step 4: Display the First Few Rows of the DataFrame
+
+    The first few rows of the DataFrame are displayed using the head method.
+
+
+Step 5: Display the First Few Rows of the DataFrame (Repeated)
+
+    The first few rows of the DataFrame are displayed again using the head method.
+
+
+Step 6: Check for Missing Values
+
+    The number of missing values in each column of the DataFrame is printed using the isnull().sum() method.
+
+
+Step 7: Generate a Histogram of the "vote_average" Attribute
+
+    A histogram of the "vote_average" attribute is plotted using the hist method.
+
+
+Step 8: Calculate the Correlation Matrix and Display it as a Heatmap
+
+    The relevant columns are selected to calculate the correlation matrix. The matrix is calculated using the corr method, and it is displayed as a heatmap using 
+    the heatmap function from seaborn.
+
+
+Step 9: Visualize Missing Data Using a Matrix and a Bar Chart
+
+    The missing data is visualized using a matrix and a bar chart using the matrix and bar functions from missingno.
+
+
+Step 10: Generate a Word Cloud of the "genres" Column
+
+    The non-null values in the "genres" column are filtered, and all the values are concatenated into a single string. A word cloud based on the concatenated 
+    values is generated using the WordCloud class from wordcloud.
+
+
+Step 11: Visualize the Distribution of Revenue and Budget
+
+    A histogram of additional numeric variables "revenue" and "budget" is plotted to visualize their distribution using the plot method.
+
+
+Step 12: Calculate Summary Statistics for Revenue and Budget
+
+    Summary statistics for additional numeric variables "revenue" and "budget" are calculated using the describe method, and they are printed using the print function.
+
+
+Step 13: Relationship between Revenue and Popularity
+
+    A scatter plot of the "revenue" and "popularity" attributes is created to examine their relationship using the scatter function from matplotlib.pyplot.
+
+
+Step 14: Relationship between Runtime and Vote Average
+
+    A scatter plot with a regression line and correlation coefficient is created to analyze the relationship between the "runtime" attribute and the vote average
+    using the regplot function from seaborn.
+
+
+
+
+The objective of this process is to explore and gain an in-depth understanding of the data, identify key patterns, trends, and relationships, and obtain valuable 
+insights for decision-making and further model development. EDA is an essential stage in the lifecycle of a data science project, as it lays the foundation for 
+subsequent data processing, feature selection, model creation, and result validation. Effective EDA provides valuable information for domain understanding, identifies
+data issues, and generates hypotheses.

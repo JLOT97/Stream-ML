@@ -1,0 +1,52 @@
+** ETL Process Documentation **
+
+
+
+Overview
+
+
+The goal of this ETL process is to prepare a clean and well-structured dataset from two initial CSV files: movies_dataset.csv and credits.csv. 
+The data is transformed and cleaned through various steps and the final result is a unified CSV file called movies_dataset_final.csv.
+
+
+
+Step Description
+
+
+1. Load and visualize data: The two CSV files are loaded into pandas dataframes and visualized for a first inspection.
+
+2. Unnesting 'belongs_to_collection' column: This column, containing a dictionary in string format, is converted into a set of separate columns.
+
+3. Handling null values: Null values in 'revenue' and 'budget' columns are filled with 0. Additionally, rows containing null values in the 'release_date' column are deleted.
+
+4. Date formatting and release year extraction: The 'release_date' column is formatted and the release year is extracted to create a new column named 'release_year'.
+
+5. Conversion of non-numeric values to NaN in 'budget' and calculation of return on investment: Non-numeric values in 'budget' are converted to NaN. Then, return 
+   on investment is calculated, and a new column 'return' is created.
+
+6. Unnesting and transformation of several columns: The 'genres', 'production_companies', 'production_countries', and 'spoken_languages' columns are transformed 
+   to obtain lists of relevant elements.
+
+7. Backup of the original dataframe: A backup of the original dataframe is made to prevent data loss.
+
+8. Removal of unnecessary columns: Several columns that will not be used in the subsequent analysis are removed.
+
+9. Removal of duplicates: Duplicate rows in the dataframe are removed.
+
+10. Combination of dataframes: The resulting dataframes are combined into a unified dataframe.
+
+11. Work with 'credits.csv' file: The 'credits.csv' file is loaded and duplicates are cleaned.
+
+12. Extraction of relevant features from 'credits.csv': Relevant features are extracted and a new dataframe is created.
+
+13. Combination of dataframes: The resulting dataframe is combined with the movie dataframe.
+
+14. Saving the final dataframe: The final dataframe is saved as a new CSV file.
+
+
+
+Additional Details
+
+
+Each step of this ETL process is carefully documented in the code, with explanatory comments and visualizations where necessary. 
+The process was designed with the aim of creating a clean, structured, and easy-to-analyze dataset for subsequent movie data analysis.
