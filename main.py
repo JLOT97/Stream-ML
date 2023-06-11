@@ -216,10 +216,10 @@ async def get_director(director: str):
 
 
 
-#-----------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------------
 
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity # Import the cosine_similarity function from the sklearn.metrics.pairwise module
+from sklearn.feature_extraction.text import TfidfVectorizer # Import the TfidfVectorizer class from the sklearn.feature_extraction.text module
 
  
 # Data Cleaning: Replace NaN values with empty strings
