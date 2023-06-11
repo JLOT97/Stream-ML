@@ -1,93 +1,43 @@
-** Exploratory Data Analysis (EDA) Documentation **
+** Description of the Exploratory Data Analysis (EDA) **
 
 
 
-
-Exploratory Data Analysis (EDA) is a fundamental stage in any data science project. It provides an initial understanding of the data and reveals important patterns, 
-trends, and relationships. In this section, an EDA is performed using various tools and techniques to explore a movie dataset.
-
-
-
-Step 1: Import the necessary libraries
-
-    Used Libraries
-    pandas: Used for data manipulation and analysis.
-    missingno: Used for visualizing missing data.
-    matplotlib.pyplot: Used for data visualization.
-    wordcloud: Used for generating word clouds.
-    sweetviz: Used for automatic EDA report generation.
-    seaborn: Used for advanced data visualization.
-    Step 1: Import Libraries
-    The necessary libraries for data analysis are imported.
+Exploratory Data Analysis (EDA) is a fundamental stage in any data science project. It provides an initial understanding of the data
+and reveals important patterns, trends, and relationships. In this section, an EDA is performed using various tools and techniques to 
+explore a movie dataset.
 
 
-Step 2: Load the Data File
 
-    The CSV file is loaded into a pandas DataFrame using the read_csv function.
-
-
-Step 3: Set Visualization Options
-
-    The visualization options are set to display all columns in the DataFrame using the set_option function.
+This file describes the process of conducting Exploratory Data Analysis (EDA) on a dataset that contains information about movies.
 
 
-Step 4: Display the First Few Rows of the DataFrame
+1. Library import: The necessary libraries for data manipulation, analysis, and visualization are imported.
 
-    The first few rows of the DataFrame are displayed using the head method.
+2. Loading the data file: The CSV file containing the information about the movies is loaded into a pandas DataFrame.
 
+3. Setting display options: pandas is set up to display all columns of the DataFrame.
 
-Step 5: Display the First Few Rows of the DataFrame (Repeated)
+4. Inspecting the first records of the DataFrame: The first records of the DataFrame are displayed to get an idea of the data we're working with.
 
-    The first few rows of the DataFrame are displayed again using the head method.
+5. Checking for missing values: The number of missing values in each column of the DataFrame is checked.
 
+6. Generating a histogram of the "vote_average" attribute: A histogram is generated to visualize the distribution of the average votes of the movies.
 
-Step 6: Check for Missing Values
+7. Calculating the correlation matrix: The correlation matrix between the numerical variables of the DataFrame is calculated and visualized using a heatmap.
 
-    The number of missing values in each column of the DataFrame is printed using the isnull().sum() method.
+8. Visualizing missing data: Missing data is visualized using a matrix and a bar chart provided by the missingno library.
 
+9. Generating a word cloud of the "genres" column: A word cloud is generated based on the genres of the movies.
 
-Step 7: Generate a Histogram of the "vote_average" Attribute
+10. Visualizing the distribution of the 'revenue' and 'budget' attributes: A histogram is generated to visualize the distribution of revenue and budget.
 
-    A histogram of the "vote_average" attribute is plotted using the hist method.
+11. Summary statistics of 'revenue' and 'budget': Summary statistics (such as mean, median, minimum, and maximum) are calculated for the 'revenue' and 
+   'budget' attributes.
 
+12. Relationship between 'revenue' and 'popularity': A scatter plot is generated to visualize the relationship between revenue and popularity of the movies.
 
-Step 8: Calculate the Correlation Matrix and Display it as a Heatmap
-
-    The relevant columns are selected to calculate the correlation matrix. The matrix is calculated using the corr method, and it is displayed as a heatmap using 
-    the heatmap function from seaborn.
-
-
-Step 9: Visualize Missing Data Using a Matrix and a Bar Chart
-
-    The missing data is visualized using a matrix and a bar chart using the matrix and bar functions from missingno.
-
-
-Step 10: Generate a Word Cloud of the "genres" Column
-
-    The non-null values in the "genres" column are filtered, and all the values are concatenated into a single string. A word cloud based on the concatenated 
-    values is generated using the WordCloud class from wordcloud.
-
-
-Step 11: Visualize the Distribution of Revenue and Budget
-
-    A histogram of additional numeric variables "revenue" and "budget" is plotted to visualize their distribution using the plot method.
-
-
-Step 12: Calculate Summary Statistics for Revenue and Budget
-
-    Summary statistics for additional numeric variables "revenue" and "budget" are calculated using the describe method, and they are printed using the print function.
-
-
-Step 13: Relationship between Revenue and Popularity
-
-    A scatter plot of the "revenue" and "popularity" attributes is created to examine their relationship using the scatter function from matplotlib.pyplot.
-
-
-Step 14: Relationship between Runtime and Vote Average
-
-    A scatter plot with a regression line and correlation coefficient is created to analyze the relationship between the "runtime" attribute and the vote average
-    using the regplot function from seaborn.
-
+13. Relationship between 'runtime' and 'vote_average': A scatter plot with a regression line and correlation coefficient is generated to analyze the relationship
+    between the runtime of the movies and the average votes they receive.
 
 
 
