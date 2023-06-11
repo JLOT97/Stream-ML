@@ -59,7 +59,7 @@ async def cantidad_filmaciones_mes(mes: str):
             return {"Error": "El mes ingresado no es válido"}
 
     # Return the number of movies filmed in the specified month.
-    return {"mes": mes, "Cantidad": cantidad}
+    return {"mes": mes, "cantidad": cantidad}
 
 
 
@@ -106,7 +106,7 @@ async def score_titulo(titulo: str):
         retorno = {
             "titulo": str(pelicula['title']),
             "anio": str(pelicula['release_year']),
-            "Popularidad": str(pelicula['popularity'])
+            "popularidad": str(pelicula['popularity'])
         }
         # Return the extracted information.
         return retorno
