@@ -1,9 +1,8 @@
 # Import the necessary libraries
-from fastapi import FastAPI
-import pandas as pd
-import uvicorn
-import ast
-import sys
+from fastapi import FastAPI # Import the FastAPI framework for building web APIs
+import pandas as pd # Import the pandas library for data analysis and manipulation
+import uvicorn # Import the uvicorn library for running the FastAPI application
+
 
 
 
@@ -12,9 +11,6 @@ app = FastAPI()
 
 
 
-# The final dataset from the ETL process is loaded into a pandas DataFrame. The dataset is loaded from a csv file stored in the provided path. 
-# 'dtype' parameter is used to specify the data type for 'column_name' column. 'low_memory' parameter is set to False to optimize memory usage
-#  while reading large csv files.
 
 
 # Read the CSV file containing the movie dataset and store it in a DataFrame with an url of google drive
@@ -24,7 +20,9 @@ url='https://drive.google.com/uc?id=' + url.split('/')[-2]
 
 df_combined = pd.read_csv(url) 
 
-#df_combined = pd.read_csv('C:/Users/Asus/JLOT/Documents/StreamHub-ML-Orchestrator/data/movies_dataset_final.csv', dtype={'column_name': str}, low_memory=False)
+
+# The final dataset from the ETL process is loaded into a pandas DataFrame. The dataset is loaded from a csv file stored in the provided path
+# df_combined = pd.read_csv('C:/Users/Asus/JLOT/Documents/StreamHub-ML-Orchestrator/data/movies_dataset_final.csv', dtype={'column_name': str}, low_memory=False)
 
 
 
@@ -295,4 +293,3 @@ if __name__ == "__main__":
 
 
 
-# http://127.0.0.1:8000/docs#/
