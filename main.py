@@ -14,7 +14,7 @@ app = FastAPI()
 
 
 # Read the CSV file containing the movie dataset and store it in a DataFrame with an url of google drive
-url = 'https://drive.google.com/file/d/1MzTdMYoQmI15Pl2Eg2Mi3CGaKaGlh6gN/view?usp=sharing'
+url = 'https://drive.google.com/file/d/1A5fO4NxBxjI-uGLkrkbH_-7fkpCxmry8/view?usp=sharing'
 
 url='https://drive.google.com/uc?id=' + url.split('/')[-2]
 
@@ -156,6 +156,10 @@ async def votos_titulo(titulo: str):
 # is a path parameter that the user can specify.
 @app.get("/get_actor/{actor}")
 async def get_actor(actor: str):
+    actor = actor.lower()
+
+    df_combined['cast'] = df_combined['cast'].str.lower()
+    
     # Filter the dataframe for movies that contain the input actor in their cast. 'na=False' ignores NaN values.
     peliculas_actor = df_combined[df_combined['cast'].str.contains(actor, na=False)]
     
@@ -182,6 +186,10 @@ async def get_actor(actor: str):
 #  is a path parameter that the user can specify.
 @app.get("/get_director/{director}")
 async def get_director(director: str):
+    # convert director variable to lowercase
+    director = director.lower()
+    # converts all values ​​in the 'crew' column in the df_combined DataFrame to lowercase
+    df_combined['crew'] = df_combined['crew'].str.lower()
     # Filter the dataframe for movies that contain the input director in their crew. 'na=False' ignores NaN values.
     peliculas_director = df_combined[df_combined['crew'].str.contains(director, na=False)]
     
@@ -234,28 +242,31 @@ tfidf_matrix = tfidf.fit_transform(df_combined['features'])
 
 # Define the recommendation function
 def recomendacion(titulo):
-    # Convert the title to lowercase
+
     titulo = titulo.lower()
 
-    # Filter movies by the selected title
+    # Filter movies by selected title
     pelicula_seleccionada = df_combined[df_combined['title'].str.lower() == titulo]
 
     if pelicula_seleccionada.empty:
         return []
 
-    # Get the index of the selected movie
+    # Filter movies by selected title
     index = pelicula_seleccionada.index[0]
 
-    # Calculate similarity between movies based on the combined features
+    # calculate the similarity between films based on the combined characteristics
     similarity_scores = cosine_similarity(tfidf_matrix[index], tfidf_matrix)
 
-    # Obtener los índices de las películas más similares
-    similar_movies_indices = similarity_scores.argsort()[0][-5:][::-1]
+    # Get the ratings of the most similar movies (excluding the selected movie)
+    similar_movies_indices = similarity_scores.argsort()[0][::-1]
+
+    # Filter similar movies to exclude the selected movie
+    similar_movies_indices = similar_movies_indices[similar_movies_indices != index]
 
     # Get the titles and similarity scores of the most similar movies
-    peliculas_similares = df_combined.iloc[similar_movies_indices][['title', 'vote_average']].values.tolist()
+    peliculas_similares = df_combined.iloc[similar_movies_indices][:5][['title', 'vote_average']].values.tolist()
 
-    # Sort the movies by similarity score from highest to lowest
+    # Sort movies by rating from highest to lowest
     peliculas_similares = sorted(peliculas_similares, key=lambda x: x[1], reverse=True)
 
     # Add additional movies to the list if needed
