@@ -16,7 +16,8 @@ app = FastAPI()
 # 'dtype' parameter is used to specify the data type for 'column_name' column. 'low_memory' parameter is set to False to optimize memory usage
 #  while reading large csv files.
 
-# Read the CSV file containing the movie dataset and store it in a DataFrame
+
+# Read the CSV file containing the movie dataset and store it in a DataFrame with an url of google drive
 url = 'https://drive.google.com/file/d/1MzTdMYoQmI15Pl2Eg2Mi3CGaKaGlh6gN/view?usp=sharing'
 
 url='https://drive.google.com/uc?id=' + url.split('/')[-2]
@@ -58,7 +59,7 @@ async def cantidad_filmaciones_mes(mes: str):
             return {"Error": "El mes ingresado no es válido"}
 
     # Return the number of movies filmed in the specified month.
-    return {"Mes": mes, "Cantidad de filmaciones en el mes": cantidad}
+    return {"mes": mes, "Cantidad": cantidad}
 
 
 
@@ -68,7 +69,7 @@ async def cantidad_filmaciones_mes(mes: str):
 
 # Define an asynchronous endpoint with FastAPI's decorator '@app.get'. This will handle HTTP GET requests to the "/cantidad_filmaciones_dia/{dia}" URL where "{dia}" 
 # is a path parameter that the user can specify.
-@app.get("/cantidad_filmaciones_día/{dia}")
+@app.get("/cantidad_filmaciones_dia/{dia}")
 async def cantidad_filmaciones_dia(dia: int):
     # The 'release_date' column is converted to datetime format for easier manipulation.
     df_combined['release_date'] = pd.to_datetime(df_combined['release_date'])
@@ -77,7 +78,7 @@ async def cantidad_filmaciones_dia(dia: int):
     cantidad = df_combined[df_combined['release_date'].dt.day == dia].shape[0]
 
     # EN: Return the number of movies filmed on the specified day.
-    return {"Cantidad de filmaciones en el día": cantidad}
+    return {"dia": dia, "cantidad": cantidad}
 
 
 
@@ -87,7 +88,7 @@ async def cantidad_filmaciones_dia(dia: int):
 
 # Define an asynchronous endpoint with FastAPI's decorator '@app.get'. This will handle HTTP GET requests to the "/score_titulo/{titulo}" URL where "{titulo}" 
 # is a path parameter that the user can specify.
-@app.get("/score_título/{titulo}")
+@app.get("/score_titulo/{titulo}")
 async def score_titulo(titulo: str):
     # The title input is converted to lowercase for better matching.
     titulo = titulo.lower()
@@ -103,8 +104,8 @@ async def score_titulo(titulo: str):
         # If movies were found, select the first one and extract the title, release year and popularity.
         pelicula = peliculas.iloc[0]
         retorno = {
-            "Título": str(pelicula['title']),
-            "Año de lanzamiento": str(pelicula['release_year']),
+            "titulo": str(pelicula['title']),
+            "anio": str(pelicula['release_year']),
             "Popularidad": str(pelicula['popularity'])
         }
         # Return the extracted information.
@@ -118,7 +119,7 @@ async def score_titulo(titulo: str):
 
 # Define an asynchronous endpoint with FastAPI's decorator '@app.get'. This will handle HTTP GET requests to the "/votos_titulo/{titulo}" URL where "{titulo}"
 # is a path parameter that the user can specify.
-@app.get("/votos_título/{titulo}")
+@app.get("/votos_titulo/{titulo}")
 async def votos_titulo(titulo: str):
     # The title input is converted to lowercase for better matching.
     titulo = titulo.lower()
@@ -139,10 +140,10 @@ async def votos_titulo(titulo: str):
         else:
             # If the movie has enough votes, extract the title, release year, total votes and average votes.
             retorno = {
-                "Título": str(pelicula['title']),
-                "Año de lanzamiento": str(pelicula['release_year']),
-                "Total de votos": str(pelicula['vote_count']),
-                "Promedio en los votos": str(pelicula['vote_average'])
+                "titulo": str(pelicula['title']),
+                "anio": str(pelicula['release_year']),
+                "voto_total": str(pelicula['vote_count']),
+                "voto_promedio": str(pelicula['vote_average'])
             }
             # Return the extracted information.
             return retorno
@@ -171,7 +172,7 @@ async def get_actor(actor: str):
         retorno_promedio = retorno_total / cantidad_peliculas if cantidad_peliculas > 0 else 0
 
         # Return the actor's name, total return, number of movies and average return.
-        return {"Actor/Actress": actor,"Retorno total": retorno_total, "Cantidad de películas": cantidad_peliculas, "Retorno promedio": retorno_promedio}
+        return {"actor": actor,"cantidad_filmaciones": cantidad_peliculas,"retorno_total": retorno_total, "retorno_promedio": retorno_promedio}
 
 
 
@@ -195,11 +196,11 @@ async def get_director(director: str):
         resultados = []
         for _, pelicula in peliculas_director.iterrows():
             resultados.append({
-                "Título": str(pelicula['title']),
-                "Año de lanzamiento": str(pelicula['release_year']),
-                "Retorno individual": str(pelicula['return']),
-                "Presupuesto": str(pelicula['budget']),
-                "Ganancia": str(pelicula['revenue'])
+                "titulo": str(pelicula['title']),
+                "anio": str(pelicula['release_year']),
+                "retorno_pelicula": str(pelicula['return']),
+                "budget_pelicula": str(pelicula['budget']),
+                "revenue_pelicula": str(pelicula['revenue'])
             })
         
         # Calculate the total return of the director's movies.
@@ -208,7 +209,7 @@ async def get_director(director: str):
         # Return the director's name, total return, and the list of movie details.
         return {
             "director": director,
-            "retorno total del director": str(retorno_total),
+            "retorno_total_director": str(retorno_total),
             "peliculas": resultados
             }
     
@@ -280,7 +281,7 @@ async def obtener_recomendacion(titulo: str):
         return {"Error": "Película no encontrada"}
     else:
         # Return the list of recommended movies.
-        return {"Lista recomendada": recomendaciones}
+        return {"lista_recomendada": recomendaciones}
 
 
 
