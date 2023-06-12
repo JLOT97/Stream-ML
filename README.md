@@ -32,13 +32,13 @@ We use the analysis of the data to build our recommendation system, which provid
 
 In this section, you will find documentation related to different aspects of the project. Each documentation file and its description are listed below:
 
-- [FastAPI.txt](documents/FastAPI.txt): Documentation on the FastAPI framework used in the development of the project. Provides detailed development information and step-by-step description.
+- [FastAPI](documents/FastAPI.md): Documentation on the FastAPI framework used in the development of the project. Provides detailed development information and step-by-step description.
 
-- [eda.txt](documents/eda.txt): Documentation on the Exploratory Data Analysis (EDA) process. It describes the steps and techniques used to explore and understand the movie dataset.
+- [eda](documents/eda.md): Documentation on the Exploratory Data Analysis (EDA) process. It describes the steps and techniques used to explore and understand the movie dataset.
 
-- [etl.txt](documents/etl.txt): Documentation on the Extract, Transform, Load (ETL) process. It explains how the movie dataset was prepared and cleaned.
+- [etl](documents/etl.md): Documentation on the Extract, Transform, Load (ETL) process. It explains how the movie dataset was prepared and cleaned.
 
-- [ml.txt](documents/ml.txt): Documentation on the recommendation model used in the project. It describes the algorithm used, input features, and how recommendations are generated.
+- [ml](documents/ml.md): Documentation on the recommendation model used in the project. It describes the algorithm used, input features, and how recommendations are generated.
 
 *You can access each documentation file by clicking on each of the corresponding file names*
 
