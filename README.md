@@ -52,10 +52,9 @@ The *MovieMate* API offers various endpoints that provide unique functionalities
 
 7. [`get_recommendation`](https://stream-ml-jlot.onrender.com/docs): This is the main recommendation endpoint that provides a list of recommended movies based on a movie title. To use this endpoint, simply click on the endpoint name.
 
-please click on the endpoint titles and it will redirect you to the server.
 
 
-*please click on the endpoint titles and it will redirect you to the server and also replace `{month}`, `{day}`, `{title}`, `{actor}`, `{director}` with the values you want to search for.*
+*please click on the endpoint titles and it will redirect you to the server and also replace `{mes}`, `{dia}`, `{titulo}`, `{actor}`, `{director}` with the values you want to search for.*
 
 
 
