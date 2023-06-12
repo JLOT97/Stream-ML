@@ -65,4 +65,4 @@ explore a movie dataset.
 
 
 
-*The objective of this process is to explore and gain an in-depth understanding of the data, identify key patterns, trends, and relationships, and obtain valuable insights for decision-making and further model development. EDA is an essential stage in the lifecycle of a data science project, as it lays the foundation for subsequent data processing, feature selection, model creation, and result validation. Effective EDA provides valuable information for domain understanding, identifies data issues, and generates hypotheses.*
+The objective of this process is to explore and gain an in-depth understanding of the data, identify key patterns, trends, and relationships, and obtain valuable insights for decision-making and further model development. EDA is an essential stage in the lifecycle of a data science project, as it lays the foundation for subsequent data processing, feature selection, model creation, and result validation. Effective EDA provides valuable information for domain understanding, identifies data issues, and generates hypotheses.
