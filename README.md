@@ -90,4 +90,4 @@ The project depends on the following libraries:
 
 ## 📄 9. License <a name="license"></a>
 
-This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 2, June 1991.
+This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 2, June 1991. [See more](LICENSE)
