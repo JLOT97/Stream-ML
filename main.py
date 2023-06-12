@@ -72,8 +72,26 @@ async def cantidad_filmaciones_dia(dia: int):
     # The 'release_date' column is converted to datetime format for easier manipulation.
     df_combined['release_date'] = pd.to_datetime(df_combined['release_date'])
 
+# Checking if the day is a number
+    if dia.isdigit():
+        dia_num = int(dia)
+
+    else:
+        # Transforming the day name into lowercase and checking wich day is
+        dia = dia.lower()
+        dias_nombres = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo']
+
+        if dia in dias_nombres:
+            dia_num = dias_nombres.index(dia) + 1
+
+        else:
+            return {"Error": "El día ingresado no es válido"}
+
+
     # The number of movies released on the specified day of any month is calculated.
     cantidad = df_combined[df_combined['release_date'].dt.day == dia].shape[0]
+
+    cantidad = df_combined[df_combined['release_date'].dt.day == dia_num].shape[0]
 
     # EN: Return the number of movies filmed on the specified day.
     return {"dia": dia, "cantidad": cantidad}
