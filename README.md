@@ -4,15 +4,16 @@
 
  *Stream-ML* is a robust and user-friendly movie recommendation system, designed to help you find your next favorite movie. Based on a dataset of thousands of movies, our system learns from data patterns and similarities between movies to provide the most accurate recommendations. Just enter the title of a movie you like and let  *Stream-ML* do the rest!
 
-## 📋 Index
+## 📋 Table of Contents
 1. [Data Cleaning and Preparation Process](#cleaning)
 2. [Exploratory Data Analysis](#eda)
 3. [Recommendation Model](#model)
-4. [How to Use](#use)
+4. [Documentation](#documentation)
+5. [How to Use](#use)
 6. [Usage Example](#example)
 7. [API Endpoints](#endpoints)
 8. [Dependencies](#dependencies)
-8. [License](#license)
+9. [License](#license)
 
 ## 🧹 1. Data Cleaning and Preparation Process <a name="cleaning"></a>
 
@@ -26,15 +27,29 @@ Once the data is clean and prepared, we perform an EDA to uncover patterns, tren
 
 We use the analysis of the data to build our recommendation system, which provides movie suggestions based on a movie title specified by the user. [See more](main.py)
 
-## 💡 4. How to Use <a name="use"></a>
+## 📋 4. Documentation <a name="documentation"></a>
+
+In this section, you will find documentation related to different aspects of the project. Each documentation file and its description are listed below:
+
+- [FastAPI.txt](documents/FastAPI.txt): Documentation on the FastAPI framework used in the development of the project. Provides detailed development information and step-by-step description.
+
+- [eda.txt](documents/eda.txt): Documentation on the Exploratory Data Analysis (EDA) process. It describes the steps and techniques used to explore and understand the movie dataset.
+
+- [etl.txt](documents/etl.txt): Documentation on the Extract, Transform, Load (ETL) process. It explains how the movie dataset was prepared and cleaned.
+
+- [ml.txt](documents/ml.txt): Documentation on the recommendation model used in the project. It describes the algorithm used, input features, and how recommendations are generated.
+
+*You can access each documentation file by clicking on each of the corresponding file names*
+
+## 💡 5. How to Use <a name="use"></a>
 
 Users can interact with the API by visiting the server in their browser and providing a movie title. The API will return a list of recommended movies based on the provided title.
 
-## 📖 5. Usage Example <a name="example"></a>
+## 📖 6. Usage Example <a name="example"></a>
 
 To get movie recommendations, visit the server in your browser and provide a movie title. The API will return a list of recommended movies.
 
-## 📚 6. API Endpoints <a name="endpoints"></a>
+## 📚 7. API Endpoints <a name="endpoints"></a>
 
 The *Stream-ML* API offers various endpoints that provide unique functionalities for movie data exploration and recommendation generation. Here we describe each of them:
 
@@ -58,7 +73,7 @@ The *Stream-ML* API offers various endpoints that provide unique functionalities
 
 
 
-## ⚙️ 7. Dependencies <a name="dependencies"></a>
+## ⚙️ 8. Dependencies <a name="dependencies"></a>
 
 The project depends on the following libraries:
 - pandas
@@ -72,6 +87,6 @@ The project depends on the following libraries:
 - sweetviz
 - wordcloud
 
-## 📄 8. License <a name="license"></a>
+## 📄 9. License <a name="license"></a>
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 2, June 1991.
