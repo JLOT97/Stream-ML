@@ -1,6 +1,6 @@
 # 🎬Stream-ML Your Movie Recommendation System🍿
 
-![Project Image](https://drive.google.com/file/d/1xFXRtg6z8trpGVa15tIVjE3owqLjZQXA)
+![Project Image](https://drive.google.com/uc?export=view&id=1xFXRtg6z8trpGVa15tIVjE3owqLjZQXA)
 
 
  *Stream-ML* is a robust and user-friendly movie recommendation system, designed to help you find your next favorite movie. Based on a dataset of thousands of movies, our system learns from data patterns and similarities between movies to provide the most accurate recommendations. Just enter the title of a movie you like and let  *Stream-ML* do the rest!
