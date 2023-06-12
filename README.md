@@ -36,7 +36,7 @@ To get movie recommendations, visit the server in your browser and provide a mov
 
 ## 📚 6. API Endpoints <a name="endpoints"></a>
 
-The *MovieMate* API offers various endpoints that provide unique functionalities for movie data exploration and recommendation generation. Here we describe each of them:
+The *Stream-ML* API offers various endpoints that provide unique functionalities for movie data exploration and recommendation generation. Here we describe each of them:
 
 1. [`GetFilmingCountByMonth`](https://stream-ml-jlot.onrender.com/docs): This endpoint allows you to find out the number of filmings made in a particular month. You just need to indicate the name of the month (in Spanish) or its corresponding number. To use this endpoint, simply click on the endpoint name.
 
