@@ -36,21 +36,24 @@ To get movie recommendations, visit the server in your browser and provide a mov
 
 ## 📚 6. API Endpoints <a name="endpoints"></a>
 
-The *Stream-ML* API offers various endpoints that provide unique functionalities for movie data exploration and recommendation generation. Here we describe each one:
+The *MovieMate* API offers various endpoints that provide unique functionalities for movie data exploration and recommendation generation. Here we describe each of them:
 
-    1. `GetFilmingCountByMonth`: This endpoint allows you to find out the number of filmings made in a particular month. You just need to indicate the name of the month or its corresponding number. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/cantidad_filmaciones_mes/{month})
+1. [`GetFilmingCountByMonth`](https://stream-ml-jlot.onrender.com/cantidad_filmaciones_mes/{mes}): This endpoint allows you to find out the number of filmings made in a particular month. You just need to indicate the name of the month (in Spanish) or its corresponding number. To use this endpoint, simply click on the endpoint name.
 
-    2. `GetFilmingCountByDay`: Similar to the previous one, this endpoint returns the number of filmings made on a particular day of any month. You just need to provide the day in numeric format. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/cantidad_filmaciones_dia/{day})
+2. [`GetFilmingCountByDay`](https://stream-ml-jlot.onrender.com/cantidad_filmaciones_dia/{dia}): Similar to the previous one, this endpoint returns the number of filmings made on a specific day of any month. You only need to provide the day in numeric format. To use this endpoint, simply click on the endpoint name.
 
-    3. `GetFilmScoreByTitle`: Allows you to know the popularity score of a movie based on its title. You just need to provide the movie title. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/score_titulo/{title})
+3. [`GetFilmScoreByTitle`](https://stream-ml-jlot.onrender.com/score_titulo/{titulo}): It allows you to know the popularity score of a movie based on its title. You just need to provide the movie title. To use this endpoint, simply click on the endpoint name.
 
-    4. `GetFilmVotesByTitle`: This endpoint provides information about the votes of a movie given its title, including the total number of votes and the average votes. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/votos_titulo/{title})
+4. [`GetFilmVotesByTitle`](https://stream-ml-jlot.onrender.com/votos_titulo/{titulo}): This endpoint provides information about the votes for a movie given its title, including the total number of votes and the average vote. To use this endpoint, simply click on the endpoint name.
 
-    5. `GetActorInformation`: Allows you to get information about a particular actor, such as the number of filmings they have participated in, the total return and the average return of their films. You just need to provide the actor's name. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/get_actor/{actor})
+5. [`GetActorInformation`](https://stream-ml-jlot.onrender.com/get_actor/{actor}): It allows you to retrieve information about a specific actor, such as the number of films they have participated in, the total return, and the average return of their movies. You just need to provide the actor's name. To use this endpoint, simply click on the endpoint name.
 
-    6. `GetDirectorInformation`: This endpoint provides information about a particular director, such as the total return of their films and a list of their films with details such as the title, the release year, the return, the budget, and the revenue of each film. You just need to provide the director's name. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/get_director/{director})
+6. [`GetDirectorInformation`](https://stream-ml-jlot.onrender.com/get_director/{director}): This endpoint provides information about a specific director, such as the total return of their movies and a list of their movies with details such as title, release year, return, budget, and revenue. You just need to provide the director's name. To use this endpoint, simply click on the endpoint name.
 
-    7. `obtener_recomendacion`: This is the main recommendation endpoint that provides you with a list of recommended films based on the title of a film. To use this endpoint, visit: [here](https://stream-ml-jlot.onrender.com/recomendacion/{title})
+7. [`obtener_recomendacion`](https://stream-ml-jlot.onrender.com/recomendacion/{titulo}): This is the main recommendation endpoint that provides a list of recommended movies based on a movie title. To use this endpoint, simply click on the endpoint name.
+
+Please click on the respective links to directly access each endpoint on the server.
+
 
     Please replace `{month}`, `{day}`, `{title}`, `{actor}`, `{director}` with the values you want to search for.
 
