@@ -68,7 +68,7 @@ async def cantidad_filmaciones_mes(mes: str):
 # Define an asynchronous endpoint with FastAPI's decorator '@app.get'. This will handle HTTP GET requests to the "/cantidad_filmaciones_dia/{dia}" URL where "{dia}" 
 # is a path parameter that the user can specify.
 @app.get("/cantidad_filmaciones_dia/{dia}")
-async def cantidad_filmaciones_dia(dia: int):
+async def cantidad_filmaciones_dia(dia: str):
     # The 'release_date' column is converted to datetime format for easier manipulation.
     df_combined['release_date'] = pd.to_datetime(df_combined['release_date'])
 
